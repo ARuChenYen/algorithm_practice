@@ -1,5 +1,12 @@
 from copy import deepcopy
 
+def init():
+    unsortlist = [3,14,15,926,535,10,-89,79,3236,7,11,520,806,-2]
+    or_unsortlist = deepcopy(unsortlist)
+    len_unsortlist = len(unsortlist)
+    return unsortlist, or_unsortlist, len_unsortlist
+
+
 def findsmallest(unsortlist):
     tempsmallest_num = unsortlist[0]
     tempsmallest_index = 0
@@ -15,12 +22,13 @@ def findsmallest(unsortlist):
     
     
 if __name__ == '__main__':
-    unsortlist = [3,14,15,926,535,10,-89,79,3236,7,11,520,806,-2]
-    or_unsortlist = deepcopy(unsortlist)
-    len_unsortlist = len(unsortlist)
+    
+    unsortlist, or_unsortlist, len_unsortlist = init()
+    
     sortlist = []
     count2 = 0
     total_O = 0
+
     while len_unsortlist != 0:
         unsortlist, samllest, count = findsmallest(unsortlist)
         sortlist.append(samllest)
